@@ -13,7 +13,7 @@
             <div class="card-body">
                 <form action="" method="post">
                     <div>
-                        <img src="../images/logo_4whelss.png" alt="4Whelss" class="logo_sistem">
+                        <img src="../images/logo_4whelss.png" alt="4Whelss" class="logo_system">
                     </div>
                     <div class="mb-3">
                         <label for="login" class="form-label">E-mail:</label>
