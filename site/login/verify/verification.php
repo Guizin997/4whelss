@@ -11,11 +11,14 @@
             $result->bindValue('pass',$password);
             $result->execute();
 
-            if ($result->rowCount() > 0) {
+            if ($result->rowCount() == 1) {
                 $data = $result->fetch();
 
                 $_SESSION['id'] = $data['email'];
                 header('location: ../../index.php');
-            }
+            } //else {
+               // header('location: ../login_sing_in.php?erro');
+                
+            //}
         } 
     }
