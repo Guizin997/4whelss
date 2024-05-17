@@ -16,9 +16,9 @@
 
                 $_SESSION['id'] = $data['email'];
                 header('location: ../../index.php');
-            } //else {
-               // header('location: ../login_sing_in.php?erro');
+            } else {
+                header('location: ../login_sing_in.php?error=ok');
                 
-            //}
+            }
         } 
     }

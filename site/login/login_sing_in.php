@@ -1,3 +1,14 @@
+<?php
+    if(isset($_GET['error'])) {
+        if($_GET['error'] == "ok") {
+            echo '
+            <div class="alert alert-warning alert-dismissible fade show d-flex jutify col-6" role="alert">
+                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';    
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +28,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="login" class="form-label">E-mail ou nome de usuário:</label>
-                        <input type="email" class="form-control border border-1 border-secondary" id="login" name="login" required>
+                        <input type="email" class="form-control border border-1 border-secondary" id="login" name="login" value="gui@gmail.com" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Senha:</label>
@@ -28,11 +39,6 @@
             </div>
         </div>
     </div>  
-    <?php
-        // if(isset($_SERVER['HTTP_HOST'])){
-
-        // }
-    ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="../parsley/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../parsley/node_modules/parsleyjs/dist/parsley.min.js"></script>
