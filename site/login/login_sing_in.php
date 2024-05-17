@@ -1,14 +1,3 @@
-<?php
-    if(isset($_GET['error'])) {
-        if($_GET['error'] == "ok") {
-            echo '
-            <div class="alert alert-warning alert-dismissible fade show d-flex jutify col-6" role="alert">
-                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>';    
-        }
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +15,17 @@
                     <div>
                         <img src="../images/logo_4whelss.png" alt="4Whelss" class="logo_system">
                     </div>
+                    <?php
+                        if(isset($_GET['error'])) {
+                            if($_GET['error'] == "ok") {
+                                echo '
+                                <div class="alert alert-danger alert-dismissible fade show mx-auto" role="alert">
+                                    <strong>Email e/ou senha incorreto(s)!</strong> Por favor, tente novamente.
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>';
+                            }
+                        }
+                    ?>
                     <div class="mb-3">
                         <label for="login" class="form-label">E-mail ou nome de usuário:</label>
                         <input type="email" class="form-control border border-1 border-secondary" id="login" name="login" value="gui@gmail.com" required>
