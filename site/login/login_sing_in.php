@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <div class="container vh-100 d-flex justify-content-center align-items-center">
         <div class="card">
             <div class="card-body">
-                <form data-parsley-validate action="verify/verification.php" method="post">
+                <form data-parsley-validate action="verify/login_verify.php" method="post">
                     <div>
                         <img src="../images/logo_4whelss.png" alt="4Whelss" class="logo_system">
                     </div>
