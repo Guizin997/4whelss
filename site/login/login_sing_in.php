@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +11,21 @@
     <div class="container vh-100 d-flex justify-content-center align-items-center">
         <div class="card">
             <div class="card-body">
-                <form data-parsley-validate action="verify/verification.php" method="post">
+                <form data-parsley-validate action="verify/login_verify.php" method="post">
                     <div>
                         <img src="../images/logo_4whelss.png" alt="4Whelss" class="logo_system">
                     </div>
+                    <?php
+                    if(isset($_GET['error']))
+                        if($_GET['error'] == "ok"){
+                        echo '
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Email e/ou senha incorreto(s)!</strong> Por favor, tente novamente.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                        ';
+                        }
+                    ?>
                     <div class="mb-3">
                         <label for="login" class="form-label">E-mail ou nome de usuário:</label>
                         <input type="email" class="form-control border border-1 border-secondary" id="login" name="login" required>
@@ -28,11 +39,6 @@
             </div>
         </div>
     </div>  
-    <?php
-        // if(isset($_SERVER['HTTP_HOST'])){
-
-        // }
-    ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="../parsley/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../parsley/node_modules/parsleyjs/dist/parsley.min.js"></script>
