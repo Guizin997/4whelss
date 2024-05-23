@@ -2,4 +2,4 @@
 session_start();
 session_unset();
 session_destroy();
-header('location: ../login_sing_in.php');
+header('location: ../sing_in.php');
