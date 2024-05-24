@@ -11,19 +11,32 @@
     <div class="container vh-100 d-flex justify-content-center align-items-center">
         <div class="card">
             <div class="card-body">
-                <form data-parsley-validate action="verify/login_verify.php" method="post">
+                <form data-parsley-validate action="verify/verify_sing_in.php" method="post">
                     <div>
                         <img src="../images/logo_4whelss.png" alt="4Whelss" class="logo_system">
                     </div>
+                    <div class="w-100 mb-2 d-flex justify-content-center">
+                        <h1>Login</h1>
+                    </div>
                     <?php
-                    if(isset($_GET['error']))
-                        if($_GET['error'] == "ok"){
-                        echo '
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <strong>Email e/ou senha incorreto(s)!</strong> Por favor, tente novamente.
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                        ';
+                        if (isset($_GET['success'])) {
+                            if ($_GET['success'] == "ok") {
+                                echo '
+                                    <div class="alert alert-success alert-dismissible fade show mx-auto" role="alert">
+                                        Usuário<strong>cadastrado</strong> com sucesso!
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>';
+                            }
+                        }
+
+                        if(isset($_GET['error'])) {
+                            if($_GET['error'] == "ok") {
+                                echo '
+                                <div class="alert alert-danger alert-dismissible fade show mx-auto" role="alert">
+                                    <strong>Email e/ou senha incorreto(s)!</strong> Por favor, tente novamente.
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>';
+                            }
                         }
                     ?>
                     <div class="mb-3">
@@ -34,6 +47,7 @@
                         <label for="password" class="form-label">Senha:</label>
                         <input type="password" class="form-control border border-1 border-secondary" id="password" name="password" required>
                     </div>
+                    <h6>Não possui uma conta? <a href="sing_up.php">Cadastrar-se</a></h6>
                     <input type="submit" name="submit" value="Entrar" class="btn mb-2 mt-4 w-100" id="button-color">
                 </form>
             </div>
