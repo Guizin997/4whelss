@@ -15,6 +15,9 @@
                     <div>
                         <img src="../images/logo_4whelss.png" alt="4Whelss" class="logo_system">
                     </div>
+                    <div class="w-100 mb-2 d-flex justify-content-center">
+                        <h1>Login</h1>
+                    </div>
                     <?php
                         if (isset($_GET['success'])) {
                             if ($_GET['success'] == "ok") {
