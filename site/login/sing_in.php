@@ -23,7 +23,7 @@
                             if ($_GET['success'] == "ok") {
                                 echo '
                                     <div class="alert alert-success alert-dismissible fade show mx-auto" role="alert">
-                                        Usuário<strong>cadastrado</strong> com sucesso!
+                                        Usuário cadastrado com sucesso!
                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                     </div>';
                             }

@@ -6,9 +6,10 @@
     }
     require 'template/header.php';
     ?>
-<div>
-    <h1>Bem-vindo </h1>
-</div>
+
+    <h1 style="margin-top: 70px;">
+        conteúdo aqui
+    </h1>
 
 <?php
 require 'template/footer.php';
