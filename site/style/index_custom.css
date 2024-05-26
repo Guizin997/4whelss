@@ -2,6 +2,16 @@
     background-color: #13747d;
 }
 
+#dropdown-bg {
+    background-color: #13747d;
+    border: 2px solid #1c5052;
+}
+
+#dropdown-bg li :hover {
+    background-color: #1c5052;
+    color: #fff;
+}
+
 .off-canva {
     background-color: #13747d;
 }

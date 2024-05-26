@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class=">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +20,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body off-canva">
+        <div>
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -27,18 +28,19 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
-          <div>
-            <li class="nav-item dropdown">
+          </div>
+          <div class="align-items-end">
+            <li class="nav-item dropup">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <?php echo 'user name';?>
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu" id="dropdown-bg">
                 <li><a class="dropdown-item" href="#">Action</a></li>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item text-danger" id="logout-bg" href="login/verify/logout_verify.php">Logout</a></li>
                 </ul>
             </li>
           </div>
