@@ -30,19 +30,19 @@
                         }
                     ?>
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nome de usuário:</label>
+                        <label for="name" class="form-label">Nome de usuário<span style="color: red;">*</span></label>
                         <input type="text" class="form-control border border-1 border-secondary" id="name" name="name" required>
                     </div>
                     <div class="mb-3">
-                        <label for="login" class="form-label">E-mail:</label>
+                        <label for="login" class="form-label">E-mail<span style="color: red;">*</span></label>
                         <input type="email" class="form-control border border-1 border-secondary" id="login" name="login" required>
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Senha:</label>
+                        <label for="password" class="form-label">Senha<span style="color: red;">*</span></label>
                         <input type="password" class="form-control border border-1 border-secondary" id="password" name="password" required>
                     </div>
                     <h6>Já possui uma conta? <a href="sing_in.php">Entrar</a></h6>
-                    <input type="submit" name="submit" value="Entrar" class="btn mb-2 mt-4 w-100" id="button-color">
+                    <input type="submit" name="submit" value="Cadastrar" class="btn mb-2 mt-4 w-100" id="button-color">
                 </form>
             </div>
         </div>

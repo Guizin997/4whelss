@@ -40,11 +40,11 @@
                         }
                     ?>
                     <div class="mb-3">
-                        <label for="login" class="form-label">E-mail ou nome de usuário:</label>
+                        <label for="login" class="form-label">E-mail<span style="color: red;">*</span></label>
                         <input type="email" class="form-control border border-1 border-secondary" id="login" name="login" required>
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Senha:</label>
+                        <label for="password" class="form-label">Senha<span style="color: red;">*</span></label>
                         <input type="password" class="form-control border border-1 border-secondary" id="password" name="password" required>
                     </div>
                     <h6>Não possui uma conta? <a href="sing_up.php">Cadastrar-se</a></h6>
