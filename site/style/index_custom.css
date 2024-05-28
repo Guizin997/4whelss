@@ -12,6 +12,10 @@
     color: #fff;
 }
 
+#body {
+    margin-top: 100px;
+}
+
 .off-canva {
     background-color: #13747d;
 }

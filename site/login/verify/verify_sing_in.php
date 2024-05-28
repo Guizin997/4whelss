@@ -20,4 +20,4 @@
                 header('location: ../sing_in.php?error=ok');
             }
         } 
-    }
+    } 

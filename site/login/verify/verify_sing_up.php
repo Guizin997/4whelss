@@ -22,8 +22,5 @@
                 $result->execute();
                 header('location: ../sing_in.php?success=ok');
             }
-            
-            
-            
         } 
     }

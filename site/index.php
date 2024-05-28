@@ -1,15 +1,17 @@
 <?php
-    session_start();
-    if (!isset($_SESSION['id'])) {
-        header('location: login/login_sing_in.php');
-        die();
-    }
-    require 'template/header.php';
-    ?>
+require 'template/header.php';
+?>
 
-    <h1 style="margin-top: 70px;">
-        conteúdo aqui
-    </h1>
+
+<div class="d-flex justify-content-around" id="body">
+    <div class="card bg-primary w-25">
+        <h2>Carros</h2>
+    </div>
+    <div class="card bg-primary w-25">
+        <h2>Alugueis</h2>
+    </div>
+</div>
+
 
 <?php
 require 'template/footer.php';

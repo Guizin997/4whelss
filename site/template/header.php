@@ -1,3 +1,23 @@
+<?php
+session_start();
+if (!isset($_SESSION['id'])) {
+    header('location: login/login_sing_in.php');
+    die();
+}
+require 'database/settings_db.php';
+
+$sql = "SELECT user_name FROM users WHERE email = :email";
+$result = $conn->prepare($sql);
+$result->bindValue('email', $_SESSION['id']);
+$result->execute();
+$row = $result->fetch();
+if ($row) {
+  $userName = $row['user_name'];
+} else {
+  $userName = "Nome do Usuário";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br" class=">
 <head>
@@ -16,33 +36,28 @@
         <img src="images/logo_4whelss.png" style="width: 60px; border-radius: 50%; background-color: #1c5052;" alt="4 Whelss">
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header off-canva">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <?php echo $userName;?>
+              </a>
+              <ul class="dropdown-menu" id="dropdown-bg">
+              <li><a class="dropdown-item fw-bolder text-danger" id="logout-bg" href="login/verify/logout_verify.php">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body off-canva">
-        <div>
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="./index.php"><p>Pagina inicial</p></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
           </li>
-          </div>
-          <div class="align-items-end">
-            <li class="nav-item dropup">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <?php echo 'user name';?>
-                </a>
-                <ul class="dropdown-menu" id="dropdown-bg">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item text-danger" id="logout-bg" href="login/verify/logout_verify.php">Logout</a></li>
-                </ul>
-            </li>
           </div>
         </ul>
       </div>
