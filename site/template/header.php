@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['id'])) {
-    header('location: login/login_sing_in.php');
+    header('location: login/sing_in.php');
     die();
 }
 require 'database/settings_db.php';
