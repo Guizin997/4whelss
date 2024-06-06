@@ -12,9 +12,9 @@
             $result->execute();
 
             if ($result->rowCount() == 1) {
-                $data = $result->fetch();
+                $data = $result->fetch(PDO::FETCH_OBJ);
 
-                $_SESSION['id'] = $data['email'];
+                $_SESSION['id'] = $data->email;
                 header('location: ../../index.php');
             } else {
                 header('location: ../sing_in.php?error=ok');
