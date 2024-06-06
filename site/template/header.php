@@ -56,7 +56,7 @@ if ($row) {
             <a class="nav-link active" aria-current="page" href="./index.php"><p>Pagina inicial</p></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link active" href="./cars_table.php">Carros Cadastrados</a>
           </li>
           </div>
         </ul>

@@ -3,12 +3,18 @@ require 'template/header.php';
 ?>
 
 
-<div class="d-flex justify-content-around" id="body">
-    <div class="card bg-primary w-25">
-        <h2>Carros</h2>
-    </div>
-    <div class="card bg-primary w-25">
-        <h2>Alugueis</h2>
+<div id="body">
+    <div class="container-fluid d-flex flex-column flex-sm-row justify-content-around ">
+        <div class="card bg-primary my-3 page-redirector">
+            <div class="card-body">
+                <h1>Carros</h1>
+            </div>
+        </div>
+        <div class="card bg-primary my-3 page-redirector">
+            <div class="card-body">
+                <h1>Alugueis</h1>
+            </div>
+        </div>
     </div>
 </div>
 
