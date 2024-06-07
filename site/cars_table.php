@@ -15,8 +15,9 @@ $cars = $result->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 <div id="body">
-   <div class="container-fluid">
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#carsTable">Adicionar Carro</button>
+   <div class="container-fluid d-flex justify-content-between">
+      <h1>Cadastro de Carros</h1>
+      <button type="button" class="btn btn-primary fw-bold" data-bs-toggle="modal" data-bs-target="#carsTable">Adicionar Carro</button>
       <div class="modal fade" id="carsTable" tabindex="-1" aria-labelledby="insertModal" aria-hidden="true">
          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
@@ -44,14 +45,14 @@ $cars = $result->fetchAll(PDO::FETCH_OBJ);
          </div>
       </div>
    </div>
-   <div class="p-4">
-      <table class="table table-striped">
+   <div class="container-fluid py-4 table-responsive">
+      <table class="table table-striped table-bordered">
          <thead>
             <tr class="table-dark">
-               <th>ID</th>
+               <th>Chassi</th>
                <th>Modelo</th>
-               <th>Valor do Aluguel</th>
-               <th>Quilômetros Rodados</th>
+               <th>Valor do Aluguel (R$)</th>
+               <th>Quilômetros Rodados (Km)</th>
                <th>Marca</th>
                <th>Ações</th>
             </tr>
@@ -62,10 +63,10 @@ $cars = $result->fetchAll(PDO::FETCH_OBJ);
                foreach ($cars as $car) {
                   echo '<tr>';
                   echo "<th> $car->chassi </th>";
-                  echo "<th> $car->modelo </th>";
-                  echo "<th> $car->valor_aluguel </th>";
-                  echo "<th> $car->quilometros_rodados Km </th>";
-                  echo "<th> $car->marca </th>";
+                  echo "<td> $car->modelo </td>";
+                  echo "<td> R$ $car->valor_aluguel,00 </td>";
+                  echo "<td> $car->quilometros_rodados Km </td>";
+                  echo "<td> $car->marca </td>";
                   echo '</tr>';
                }
                $content = true;  
