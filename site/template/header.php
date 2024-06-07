@@ -10,9 +10,9 @@ $sql = "SELECT user_name FROM users WHERE email = :email";
 $result = $conn->prepare($sql);
 $result->bindValue('email', $_SESSION['id']);
 $result->execute();
-$row = $result->fetch();
+$row = $result->fetch(PDO::FETCH_OBJ);
 if ($row) {
-  $userName = $row['user_name'];
+  $userName = $row->user_name;
 } else {
   $userName = "Nome do Usuário";
 }
