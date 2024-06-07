@@ -11,7 +11,7 @@
     <div class="container vh-100 d-flex justify-content-center align-items-center">
         <div class="card">
             <div class="card-body">
-                <form data-parsley-validate action="verify/verify_sing_in.php" method="post">
+                <form data-parsley-validate action="verifications/verify_sing_in.php" method="post">
                     <div>
                         <img src="../images/logo_4whelss.png" alt="4Whelss" class="logo_system">
                     </div>
