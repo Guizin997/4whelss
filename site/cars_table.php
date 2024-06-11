@@ -15,9 +15,9 @@ $cars = $result->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 <div id="body">
-   <div class="container-fluid d-flex justify-content-between">
-      <h1>Cadastro de Carros</h1>
-      <button type="button" class="btn btn-primary fw-bold" data-bs-toggle="modal" data-bs-target="#carsTable">Adicionar Carro</button>
+   <div class="container-fluid d-flex flex-wrap justify-content-between">
+      <h1 class="m-2">Cadastro de Carros</h1>
+      <button type="button" class="btn btn-primary fw-bold m-2" data-bs-toggle="modal" data-bs-target="#carsTable">Adicionar Carro</button>
       <div class="modal fade" id="carsTable" tabindex="-1" aria-labelledby="insertModal" aria-hidden="true">
          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
@@ -26,14 +26,31 @@ $cars = $result->fetchAll(PDO::FETCH_OBJ);
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                </div>
                <div class="modal-body">
-                  <form>
-                     <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">Recipient:</label>
-                        <input type="text" class="form-control" id="recipient-name">
+                  <form class="row g-3">
+                     <div class="col-md-6">
+                        <label for="inputChassi" class="form-label fw-semibold">Nº do Chassi</label>
+                        <input type="number" class="form-control" id="inputChassi">
                      </div>
-                     <div class="mb-3">
-                        <label for="message-text" class="col-form-label">Message:</label>
-                        <textarea class="form-control" id="message-text"></textarea>
+                     <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label fw-semibold">Valor do Aluguel</label>
+                        <input type="number" class="form-control" id="inputPassword4">
+                     </div>
+                     <div class="col-12">
+                        <label for="inputAddress" class="form-label fw-semibold">Modelo do Carro</label>
+                        <input type="text" class="form-control" id="inputAddress">
+                     </div>
+                     <div class="col-md-6">
+                        <label for="inputKm" class="form-label fw-semibold">Quilômetros Rodados</label>
+                        <input type="number" class="form-control" id="inputKm">
+                     </div>
+                     <div class="col-md-4">
+                        <label for="inputMarca" class="form-label fw-semibold">Marca do carro</label>
+                        <select id="inputMarca" class="form-select">
+                           <option selected></option>
+                           <?php
+                           $sql = "SELECT nome FROM marcas"
+                           ?>
+                        </select>
                      </div>
                   </form>
                </div>
