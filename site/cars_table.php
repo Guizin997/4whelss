@@ -55,7 +55,7 @@ $cars = $result->fetchAll(PDO::FETCH_OBJ);
                   </form>
                </div>
                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
                   <button type="button" class="btn btn-primary">Send message</button>
                </div>
             </div>
@@ -66,7 +66,7 @@ $cars = $result->fetchAll(PDO::FETCH_OBJ);
       <table class="table table-striped table-bordered">
          <thead>
             <tr class="table-dark">
-               <th>Chassi</th>
+               <th>Nº do Chassi</th>
                <th>Modelo</th>
                <th>Valor do Aluguel (R$)</th>
                <th>Quilômetros Rodados (Km)</th>
