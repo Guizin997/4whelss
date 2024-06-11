@@ -48,7 +48,15 @@ $cars = $result->fetchAll(PDO::FETCH_OBJ);
                         <select id="inputMarca" class="form-select">
                            <option selected></option>
                            <?php
-                           $sql = "SELECT nome FROM marcas"
+                           $sql = "SELECT nome FROM marcas";
+                           $result = $conn->prepare($sql);
+                           $result->execute();
+                           $options = $result->fetch(PDO::FETCH_OBJ);
+                           if ($result->rowCount() > 0) {
+                              foreach ($options as $option) {
+                                 echo "<option value='$option->nome'></option>";
+                              }
+                           }
                            ?>
                         </select>
                      </div>
