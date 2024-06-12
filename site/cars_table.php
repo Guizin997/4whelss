@@ -26,35 +26,35 @@ $cars = $result->fetchAll(PDO::FETCH_OBJ);
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                </div>
                <div class="modal-body">
-                  <form class="row g-3">
+                  <form action="" method="get" class="row g-3">
                      <div class="col-md-6">
                         <label for="inputChassi" class="form-label fw-semibold">Nº do Chassi</label>
-                        <input type="number" class="form-control" id="inputChassi">
+                        <input type="number" class="form-control" id="inputChassi" name="chassi">
                      </div>
                      <div class="col-md-6">
-                        <label for="inputPassword4" class="form-label fw-semibold">Valor do Aluguel</label>
-                        <input type="number" class="form-control" id="inputPassword4">
+                        <label for="inputValor" class="form-label fw-semibold">Valor do Aluguel</label>
+                        <input type="number" class="form-control" id="inputValor" name="valor">
                      </div>
                      <div class="col-12">
-                        <label for="inputAddress" class="form-label fw-semibold">Modelo do Carro</label>
-                        <input type="text" class="form-control" id="inputAddress">
+                        <label for="inputModelo" class="form-label fw-semibold">Modelo do Carro</label>
+                        <input type="text" class="form-control" id="inputModelo" name="modelo">
                      </div>
                      <div class="col-md-6">
                         <label for="inputKm" class="form-label fw-semibold">Quilômetros Rodados</label>
-                        <input type="number" class="form-control" id="inputKm">
+                        <input type="number" class="form-control" id="inputKm" name="km">
                      </div>
-                     <div class="col-md-4">
+                     <div class="col-md-6">
                         <label for="inputMarca" class="form-label fw-semibold">Marca do carro</label>
-                        <select id="inputMarca" class="form-select">
+                        <select id="inputMarca" class="form-select" name="marca">
                            <option selected></option>
                            <?php
-                           $sql = "SELECT nome FROM marcas";
+                           $sql = "SELECT * FROM marcas";
                            $result = $conn->prepare($sql);
                            $result->execute();
-                           $options = $result->fetch(PDO::FETCH_OBJ);
+                           $options = $result->fetchALL(PDO::FETCH_OBJ);
                            if ($result->rowCount() > 0) {
                               foreach ($options as $option) {
-                                 echo "<option value='$option->nome'></option>";
+                                 echo "<option >$option->nome</option>";
                               }
                            }
                            ?>
@@ -63,8 +63,8 @@ $cars = $result->fetchAll(PDO::FETCH_OBJ);
                   </form>
                </div>
                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Send message</button>
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-primary">Adicionar</button>
                </div>
             </div>
          </div>
@@ -91,7 +91,11 @@ $cars = $result->fetchAll(PDO::FETCH_OBJ);
                   echo "<td> $car->modelo </td>";
                   echo "<td> R$ $car->valor_aluguel,00 </td>";
                   echo "<td> $car->quilometros_rodados Km </td>";
-                  echo "<td> $car->marca </td>";
+                  echo "<td>$car->marca </td>";
+                  echo '<td class="d-flex justify-content-center p-0 py-1">';
+                  echo '<button class="btn btn-warning me-2">Editar</button>';
+                  echo '<button class="btn btn-danger ms-2">Deletar</button>';
+                  echo '</td>';
                   echo '</tr>';
                }
                $content = true;  
