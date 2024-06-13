@@ -51,10 +51,10 @@ $cars = $result->fetchAll(PDO::FETCH_OBJ);
                            $sql = "SELECT nome FROM marcas";
                            $result = $conn->prepare($sql);
                            $result->execute();
-                           $options = $result->fetch(PDO::FETCH_OBJ);
+                           $options = $result->fetchAll(PDO::FETCH_OBJ);
                            if ($result->rowCount() > 0) {
                               foreach ($options as $option) {
-                                 echo "<option value='$option->nome'></option>";
+                                 echo "<option>$option->nome</option>";
                               }
                            }
                            ?>
@@ -92,6 +92,10 @@ $cars = $result->fetchAll(PDO::FETCH_OBJ);
                   echo "<td> R$ $car->valor_aluguel,00 </td>";
                   echo "<td> $car->quilometros_rodados Km </td>";
                   echo "<td> $car->marca </td>";
+                  echo '<th>';
+                  echo '<button class="btn bg-warning">Editar</button>';
+                  echo '<button class="btn bg-danger">Deletar</button>';
+                  echo '</th>';
                   echo '</tr>';
                }
                $content = true;  
