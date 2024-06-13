@@ -43,7 +43,7 @@ if ($row) {
               <?php echo $userName;?>
               </a>
               <ul class="dropdown-menu" id="dropdown-bg">
-              <li><a class="dropdown-item fw-bolder text-danger" id="logout-bg" href="login/verifications/logout_verify.php">Logout</a></li>
+              <li><a class="dropdown-item fw-bolder text-danger" id="logout-bg" href="verifications/logout_verify.php">Logout</a></li>
               </ul>
             </li>
           </ul>
