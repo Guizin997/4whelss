@@ -15,5 +15,6 @@ if (isset($_GET['chassi']) && !empty($_GET['chassi']) && isset($_GET['valor']) &
     $result->bindValue("km", $km);
     $result->bindValue("marca", $marca);
     $result->execute();
+    $crated_car = $result->fetch(PDO::FETCH_OBJ);
     header('Location: ../cars_table.php?register="ok"');
 }
