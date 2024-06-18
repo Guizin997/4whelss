@@ -54,7 +54,7 @@ $cars = $result->fetchAll(PDO::FETCH_OBJ);
                            $options = $result->fetchAll(PDO::FETCH_OBJ);
                            if ($result->rowCount() > 0) {
                               foreach ($options as $option) {
-                                 echo "<option>$option->nome</option>";
+                                 echo "<option value='$option->id_marca'>$option->nome</option>";
                               }
                            }
                            ?>
@@ -74,12 +74,12 @@ $cars = $result->fetchAll(PDO::FETCH_OBJ);
       <table class="table table-striped table-bordered">
          <thead>
             <tr class="table-dark">
-               <th>Nº do Chassi</th>
-               <th>Modelo</th>
-               <th>Valor do Aluguel (R$)</th>
-               <th>Quilômetros Rodados (Km)</th>
-               <th>Marca</th>
-               <th>Ações</th>
+               <th class="text-center align-content-center">Nº do Chassi</th>
+               <th class="text-center align-content-center">Modelo</th>
+               <th class="text-center align-content-center">Valor do Aluguel (R$)</th>
+               <th class="text-center align-content-center">Quilômetros Rodados (Km)</th>
+               <th class="text-center align-content-center">Marca</th>
+               <th class="text-center align-content-center">Ações</th>
             </tr>
          </thead>
          <tbody>
@@ -87,15 +87,15 @@ $cars = $result->fetchAll(PDO::FETCH_OBJ);
             if($result->rowCount() > 0) {
                foreach ($cars as $car) {
                   echo '<tr>';
-                  echo "<th> $car->chassi </th>";
-                  echo "<td> $car->modelo </td>";
-                  echo "<td> R$ $car->valor_aluguel,00 </td>";
-                  echo "<td> $car->quilometros_rodados Km </td>";
-                  echo "<td> $car->marca </td>";
-                  echo '<th>';
-                  echo '<button class="btn bg-warning">Editar</button>';
-                  echo '<button class="btn bg-danger">Deletar</button>';
-                  echo '</th>';
+                  echo "<th class='text-center align-content-center'> $car->chassi </th>";
+                  echo "<td class='text-center align-content-center'> $car->modelo </td>";
+                  echo "<td class='text-center align-content-center'> R$ $car->valor_aluguel,00 </td>";
+                  echo "<td class='text-center align-content-center'> $car->quilometros_rodados Km </td>";
+                  echo "<td class='text-center align-content-center'> $car->marca </td>";
+                  echo '<td class="text-center">
+                           <button class="btn bg-warning me-2">Editar</button>
+                           <button class="btn bg-danger ms-2">Deletar</button>
+                        </td>';
                   echo '</tr>';
                }
                $content = true;  
@@ -104,7 +104,7 @@ $cars = $result->fetchAll(PDO::FETCH_OBJ);
             }
             ?>
          </tbody>
-      </table>
+      </table>    
       <?php
       if ($content == false) {
          echo '<div class="container-fluid d-flex justify-content-center py-3">
