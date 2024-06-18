@@ -61,7 +61,14 @@ require 'database/settings_db.php';
       </div>
    </div>
    <?php
-   
+   if (isset($_GET['register'])) {
+      if ($_GET['register'] == "ok") {
+         echo "<div class='alert alert-danger alert-dismissible fade show mx-auto' role='alert'>
+                  O produto <strong>$created_car->modelo</strong> foi adicionado com sucesso!
+                  <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+               </div>";
+      }
+   }
    ?>
    <div class="container-fluid py-4 table-responsive">
       <table class="table table-striped table-bordered">
